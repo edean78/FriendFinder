@@ -273,11 +273,33 @@
         <br>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/edean78/FriendFinder">Github Repo</a>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h2 class="modal-title">
+                        <strong>Best Match</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" src="" alt>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Create link to jquery and javascript files -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
