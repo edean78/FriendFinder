@@ -10,7 +10,7 @@ var friendData = require("../data/friends.js");
 // ROUTING
 // ===============================================================================
 
-module.exports = function (app) {
+module.exports = function(app) {
 
     // API GET Requests
     // Below code handles when users "visit" a page.
