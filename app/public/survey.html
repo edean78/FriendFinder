@@ -346,10 +346,13 @@
                 (q9 !== "") && (q10 !== "")) {
 
                 // Ajax post the new friend to the friends API
-                $.post("/api/friends", newFriend,
-                    function (data) {
+                $.post("/api/friends", userData, function (data) {
 
-                    }
+                    $("#match-name").text(data.name);
+                    $("#match-img").attr("src", data.photo);
+
+                    $("#results-modal").modal("toggle");
+                    });
 
             } else {
                 alert("Please fill out all fields before submitting!");
