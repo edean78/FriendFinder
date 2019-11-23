@@ -4,7 +4,7 @@
 // This data sources hold an array of information on friends-data
 // ===============================================================================
 
-var friendData = require("../data/friends.js");
+var friendsData = require("../data/friends.js");
 
 // ===============================================================================
 // ROUTING
@@ -25,15 +25,33 @@ module.exports = function(app) {
     // Create New Characters - takes in JSON input
     app.post("/api/friends", function (req, res) {
 
-        var newFriend = req.body;
+        var userData = req.body;
+        var userScores = userData.scores;
+        var scoresArr = [];
+        var match = 0;
 
-        console.log(newFriend);
+        console.log(userData);
 
-        // Add the json the user sent to the friends array
-        friendData.push(newFriend);
+        for (var i = 0; i < friendsData.length; i++) {
+            var totalDiff = 0;
+            for (var j = 0; j < userScores.length; index++) {
+                totalDiff +=(math.abs(parseInt(friendsData[i].scores[j]) - parseInt(userScores)))
+            }
+            scoresArr.push(totalDiff);
+        }
 
+        for (let i = 0; i < scoresArr.length; index++) {
+            if(scoresArr[i] <= scoresArr[match]){
+                match = i;
+            }
+        }
+
+        var bestFriend = friendsData[match];
         // We then display the JSON to the users
-        res.json(newcharacter);
+        res.json(bestFriend);
+        // Add the json the user sent to the friends array
+        friendsData.push(userData);
+        
     });
 
 };
